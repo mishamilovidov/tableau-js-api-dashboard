@@ -1,0 +1,38 @@
+<!doctype html>
+
+<html>
+    <head>
+
+        <!-- vendor css -->
+        <link rel="stylesheet" href="css/bootstrap.css" />
+
+        <!-- custom css -->
+        <link rel="stylesheet" href="css/styles.css" />
+
+        <!-- custom css -->
+
+        <!-- vendor js -->
+        <script type="text/javascript" src="js/jquery.js"></script>
+        <script type="text/javascript" src="js/bootstrap.js"></script>
+        <script type="text/javascript" src="http://public.tableau.com/javascripts/api/tableau-2.min.js"></script>
+
+        <!-- custom js -->
+        <script type="text/javascript" src="js/scripts.js" ></script>
+
+    </head>
+    <body onload="initViz();">
+
+        <input id="filterOnValueFurniture" type="button" value="Furniture" onclick="filterOnValue('Furniture');" />
+        <input id="filterOnValueTechnology" type="button" value="Technology" onclick="filterOnValue('Technology');" />
+        <input id="filterOnValueOfficeSupplies" type="button" value="Office Supplies" onclick="filterOnValue('Office Supplies');" />
+        <!-- <input type="button" value="Apply Filter" onclick="addValuesToFilter();" /> -->
+        <!-- <input type="button" value="Remove Filter" onclick="removeValuesFromFilter();" /> -->
+        <input id="filterRangeOfValues" type="button" value="Range Filter" onclick="filterRangeOfValues();" />
+        <input id="clearFilters" type="button" value="Clear Filter(s)" onclick="clearFilters();" /><br>
+
+        <input id="switchTabGlobalSalesAndProfits" type="button" value="Global Sales and Profits" onclick="swtichTab('Global Sales and Profits')" />
+
+        <div id="tableauViz"></div>
+
+    </body>
+</html>
