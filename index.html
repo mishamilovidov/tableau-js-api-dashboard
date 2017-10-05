@@ -3,36 +3,57 @@
 <html>
     <head>
 
+        <title>Tableau JavaScript API Practice</title>
+
         <!-- vendor css -->
-        <link rel="stylesheet" href="css/bootstrap.css" />
+        <!-- <link rel="stylesheet" href="css/bootstrap.css" /> -->
 
         <!-- custom css -->
-        <link rel="stylesheet" href="css/styles.css" />
+        <!-- <link rel="stylesheet" href="css/styles.css" /> -->
 
         <!-- custom css -->
 
         <!-- vendor js -->
-        <script type="text/javascript" src="js/jquery.js"></script>
-        <script type="text/javascript" src="js/bootstrap.js"></script>
-        <script type="text/javascript" src="http://public.tableau.com/javascripts/api/tableau-2.min.js"></script>
+        <!-- <script type="text/javascript" src="js/jquery.js"></script>
+        <script type="text/javascript" src="js/bootstrap.js"></script> -->
+        <script type="text/javascript" src="http://public.tableau.com/javascripts/api/tableau-2.0.0.min.js"></script>
 
         <!-- custom js -->
         <script type="text/javascript" src="js/scripts.js" ></script>
 
     </head>
-    <body onload="initViz();">
+    <body onload="initViz();" style="font: verdana;">
 
-        <input id="filterOnValueFurniture" type="button" value="Furniture" onclick="filterOnValue('Furniture');" />
-        <input id="filterOnValueTechnology" type="button" value="Technology" onclick="filterOnValue('Technology');" />
-        <input id="filterOnValueOfficeSupplies" type="button" value="Office Supplies" onclick="filterOnValue('Office Supplies');" />
-        <!-- <input type="button" value="Apply Filter" onclick="addValuesToFilter();" /> -->
-        <!-- <input type="button" value="Remove Filter" onclick="removeValuesFromFilter();" /> -->
-        <input id="filterRangeOfValues" type="button" value="Range Filter" onclick="filterRangeOfValues();" />
-        <input id="clearFilters" type="button" value="Clear Filter(s)" onclick="clearFilters();" /><br>
+        <input type="button" value="Furniture" onclick="filterOnFurniture();">
+        <input type="button" value="Add Technology and Office Supplies" onclick="addValuesToFilter();">
+        <input type="button" value="Remove Technology" onclick="removeValuesFromFilter();">
+        <input type="button" value="Filter Range" onclick="filterRangeOfValues();">
+        <input type="button" value="Clear Filters" onclick="clearFilters();"> <br>
 
-        <input id="switchTabGlobalSalesAndProfits" type="button" value="Global Sales and Profits" onclick="swtichTab('Global Sales and Profits')" />
+        <input type="button" value="Map View" onclick="switchToTab('Global Sales and Profits');">
+        <input type="button" value="Sales by Sub-Category" onclick="switchToTab('Sales by Sub-Category');">
+        <input type="button" value="Dashboard View" onclick="switchToTab('Dashboard 1');"><br>
 
-        <div id="tableauViz"></div>
+        <input type="button" value="Select US & Mexico" onclick="addValuesToSelection();">
+        <input type="button" value="Select Lossess" onclick="removeFromSelection();"><br>
+
+        <input type="button" value="Chain Example" onclick="switchTabsThenFilterThenSelectMarks();"><br>
+
+        <input type="button" value="Query Sheets" onclick="querySheets();">
+        <input type="button" value="Query Dashboard" onclick="queryDashboard();">
+        <input type="button" value="Resize Dashboard" onclick="changeDashboardSize();">
+        <input type="button" value="Do Stuff" onclick="doSomeStuff();"><br>
+
+        <input type="button" value="Export to PDF" onclick="exportPDF();">
+        <input type="button" value="Export Image" onclick="exportImage();">
+        <input type="button" value="Export Cross TabF" onclick="exportCrossTab();">
+        <input type="button" value="Export Data" onclick="exportData();">
+        <input type="button" value="Revert All" onclick="revertAll();"><br>
+
+
+
+        <div id="vizContainer" style="position: absolute;"></div>
+        <dive id="markDetails" style="float:right;"></dive>
 
     </body>
 </html>
